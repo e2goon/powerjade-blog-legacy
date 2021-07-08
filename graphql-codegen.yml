@@ -1,0 +1,16 @@
+schema:
+  - ${NEXT_PUBLIC_GITHUB_ENDPOINT}:
+      headers:
+        Authorization: bearer ${NEXT_PUBLIC_GITHUB_TOKEN}
+documents: "src/**/*.graphql"
+generates:
+  src/generated/types.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+  src/generated/queries.ts:
+    plugins:
+      - typescript-document-nodes
+    config:
+      gqlImport: graphql-request#gql
+      nameSuffix: 'Query'
