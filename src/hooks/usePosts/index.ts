@@ -1,7 +1,7 @@
 import { GraphQLClient } from "graphql-request";
 import { useQuery } from "react-query";
-import { RepositoryQuery } from "@/generated/types";
-import { repository } from "@/generated/queries";
+import { IssuesQuery } from "@/generated/types";
+import { issues } from "@/generated/queries";
 
 // TODO: 리팩토링하기
 const client = new GraphQLClient(process.env.NEXT_PUBLIC_GITHUB_ENDPOINT, {
@@ -11,7 +11,7 @@ const client = new GraphQLClient(process.env.NEXT_PUBLIC_GITHUB_ENDPOINT, {
 });
 
 const fetchPosts = async () => {
-  const data: RepositoryQuery = await client.request(repository);
+  const data: IssuesQuery = await client.request(issues);
   const posts = data.repository.issues.nodes;
   return posts;
 };

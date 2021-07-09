@@ -1,13 +1,26 @@
 
-#MEMO: 데이터를 내가 원하는 구조로 가공하는 방법을 찾아보자.
-query issues($owner: String = "e2goon", $name: String = "powerjade") {
-  repository(owner: $owner, name: $name) {
+# MEMO: 데이터를 내가 원하는 구조로 가공하는 방법을 찾아보자.
+
+query issues {
+  repository(owner: "e2goon", name: "powerjade") {
     issues(first: 10, orderBy: { field: CREATED_AT, direction: DESC }) {
       nodes {
         id
+        number
         title
-        body
+        bodyText
+        createdAt
       }
+    }
+  }
+}
+
+query issue($number: Int!) {
+  repository(owner: "e2goon", name: "powerjade") {
+    issue(number: $number) {
+      title
+      body
+      createdAt
     }
   }
 }

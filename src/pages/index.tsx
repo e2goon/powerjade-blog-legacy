@@ -1,8 +1,8 @@
 import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import { QueryClient } from "react-query";
-import { fetchPosts, usePosts } from "../hooks";
 import { dehydrate } from "react-query/hydration";
+import { fetchPosts, usePosts } from "@/hooks";
 
 const HomePage: NextPage = () => {
   const { data: posts, isLoading } = usePosts();
@@ -15,7 +15,16 @@ const HomePage: NextPage = () => {
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <Link href={`/post/${post.id}`}>{post.title}</Link>
+            <Link href={`/post/${post.number}`} passHref>
+              <a>
+                <div>
+                  <strong>
+                    {post.title} {post.number}
+                  </strong>
+                  <p>{post.bodyText}</p>
+                </div>
+              </a>
+            </Link>
           </li>
         ))}
       </ul>
