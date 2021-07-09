@@ -3,6 +3,9 @@ schema:
       headers:
         Authorization: bearer ${NEXT_PUBLIC_GITHUB_TOKEN}
 documents: "src/**/*.graphql"
+hooks:
+  afterAllFileWrite:
+    - prettier --write
 generates:
   src/generated/types.ts:
     plugins:
