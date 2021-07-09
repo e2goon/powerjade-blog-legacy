@@ -16,4 +16,4 @@ generates:
       - typescript-document-nodes
     config:
       gqlImport: graphql-request#gql
-      nameSuffix: 'Query'
+      namingConvention: change-case-all#camelCase

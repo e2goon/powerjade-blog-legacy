@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predev": "npm run generate",
-    "dev": "next dev",
+    "dev": "concurrently \"npm run generate\" \"next dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "graphql-codegen --config graphql-codegen.yml --require dotenv/config"
+    "generate": "graphql-codegen --config graphql-codegen.yml --require dotenv/config --watch"
   },
   "repository": {
     "type": "git",
@@ -37,6 +36,7 @@
     "@graphql-codegen/typescript-document-nodes": "^1.17.15",
     "@graphql-codegen/typescript-operations": "1.18.3",
     "@types/react": "^17.0.13",
+    "concurrently": "^6.2.0",
     "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
