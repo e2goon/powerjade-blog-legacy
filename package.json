@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run generate\" \"next dev\"",
+    "dev": "concurrently \"npm run watch:generate\" \"next dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "graphql-codegen --config graphql-codegen.yml --require dotenv/config --watch",
-    "prebuild": "graphql-codegen --config graphql-codegen.yml --require dotenv/config"
+    "generate": "graphql-codegen --config graphql-codegen.yml --require dotenv/config",
+    "watch:generate": "graphql-codegen --config graphql-codegen.yml --require dotenv/config --watch",
+    "prebuild": "npm run generate"
   },
   "repository": {
     "type": "git",
