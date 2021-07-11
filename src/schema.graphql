@@ -1,9 +1,10 @@
-
-# MEMO: 데이터를 내가 원하는 구조로 가공하는 방법을 찾아보자.
-
-query issues {
+query issues($labels: [String!] = ["post"]) {
   repository(owner: "e2goon", name: "powerjade") {
-    issues(first: 10, orderBy: { field: CREATED_AT, direction: DESC }) {
+    issues(
+      first: 10
+      labels: $labels
+      orderBy: { field: CREATED_AT, direction: DESC }
+    ) {
       nodes {
         id
         number
