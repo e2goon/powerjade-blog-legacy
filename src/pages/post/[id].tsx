@@ -3,6 +3,7 @@ import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import ReactMarkdown from "react-markdown";
 import { fetchPosts, fetchPost, usePost } from "@/hooks";
+import { Normal as NormalLayout } from "@/layouts";
 
 interface PostProps {
   number: string;
@@ -14,13 +15,15 @@ const Post: NextPage<PostProps> = ({ number }) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <time>{post.createdAt}</time>
-      <article>
-        <ReactMarkdown>{post.body}</ReactMarkdown>
-      </article>
-    </div>
+    <NormalLayout>
+      <div className="mx-auto max-w-3xl">
+        <h1>{post.title}</h1>
+        <time>{post.createdAt}</time>
+        <article>
+          <ReactMarkdown>{post.body}</ReactMarkdown>
+        </article>
+      </div>
+    </NormalLayout>
   );
 };
 
