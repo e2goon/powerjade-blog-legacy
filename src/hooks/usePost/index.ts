@@ -1,17 +1,10 @@
-import { GraphQLClient } from "graphql-request";
 import { useQuery } from "react-query";
+import { graphqlClient } from "@/utils/client";
 import { IssueQuery } from "@/generated/types";
 import { issue } from "@/generated/queries";
 
-// TODO: 리팩토링하기
-const client = new GraphQLClient(process.env.NEXT_PUBLIC_GITHUB_ENDPOINT, {
-  headers: {
-    authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
-  },
-});
-
 const fetchPost = async (number: string) => {
-  const data: IssueQuery = await client.request(issue, {
+  const data: IssueQuery = await graphqlClient.request(issue, {
     number: Number(number),
   });
   const post = data.repository.issue;
