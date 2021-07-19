@@ -2,15 +2,31 @@ import { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import ReactMarkdown from "react-markdown";
-import { fetchPosts, fetchPost, usePost } from "@/hooks";
-import { Normal as Layout } from "@/layouts";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { format } from "date-fns";
 import gfm from "remark-gfm";
 import emoji from "remark-emoji";
+import { fetchPosts, fetchPost, usePost } from "@/hooks";
+import { Normal as Layout } from "@/layouts";
 
 interface PostProps {
   number: string;
 }
+
+const components = {
+  pre({ children }) {
+    const { type, props } = children[0];
+    if (type !== "code") return;
+    const { className, children: code } = props;
+    const match = /language-(\w+)/.exec(className || "");
+    return (
+      <SyntaxHighlighter language={match && match[1]} style={atomDark}>
+        {String(code).replace(/\n$/, "")}
+      </SyntaxHighlighter>
+    );
+  },
+};
 
 const Post: NextPage<PostProps> = ({ number }) => {
   const { data: post, isLoading } = usePost(number);
@@ -26,8 +42,8 @@ const Post: NextPage<PostProps> = ({ number }) => {
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>
         </header>
-        <article className="mt-6 prose max-w-none">
-          <ReactMarkdown remarkPlugins={[gfm, emoji]}>
+        <article className="mt-6 markdown">
+          <ReactMarkdown components={components} remarkPlugins={[gfm, emoji]}>
             {post.body}
           </ReactMarkdown>
         </article>

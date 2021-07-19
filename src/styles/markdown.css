@@ -1,0 +1,50 @@
+
+/* heading */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply my-6 font-bold;
+}
+
+.markdown h1 {
+  @apply text-4xl;
+}
+.markdown h2 {
+  @apply text-3xl;
+}
+.markdown h3 {
+  @apply text-2xl;
+}
+.markdown h4 {
+  @apply text-xl;
+}
+.markdown h5 {
+  @apply text-lg;
+}
+
+/* paragraph */
+.markdown p {
+  @apply my-4;
+}
+
+/* anchor */
+.markdown a {
+  @apply text-blue-600 underline;
+}
+
+/* inline code */
+.markdown p code {
+  @apply px-2 py-1 bg-gray-200 text-gray-800 font-semibold rounded-md;
+}
+
+/* table */
+.markdown tr {
+  @apply border-t border-b border-gray-200;
+}
+.markdown th,
+.markdown td {
+  @apply py-2 px-4;
+}
