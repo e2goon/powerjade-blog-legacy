@@ -18,7 +18,7 @@ const Post: NextPage<PostProps> = ({ number }) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <Layout>
+    <Layout title={post.title}>
       <div className="max-w-3xl mx-auto px-4">
         <header className="text-center">
           <h1 className="text-4xl font-bold">{post.title}</h1>

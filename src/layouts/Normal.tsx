@@ -1,12 +1,18 @@
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
-interface NormalLayoutProps {}
+interface NormalLayoutProps {
+  title?: string;
+}
 
-const NormalLayout: FC<NormalLayoutProps> = ({ children }) => {
+const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>{title ? title + " · powerjade" : "powerjade"}</title>
+      </Head>
       <header className="mx-auto max-w-3xl py-12">
         <Link href="/" passHref>
           <a className="block mx-auto rounded-full w-16 h-16 overflow-hidden">
@@ -30,7 +36,7 @@ const NormalLayout: FC<NormalLayoutProps> = ({ children }) => {
           Next.js
         </a>
       </footer>
-    </div>
+    </>
   );
 };
 
