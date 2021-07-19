@@ -14,7 +14,7 @@ const PostList: FC<PostListProps> = () => {
     <div className="mx-auto max-w-3xl" role="list">
       {posts.map((post) => (
         <div
-          className="my-4 first:mt-0 last:mb-0"
+          className="my-4 first:mt-0 last:mb-0 font-body"
           key={post.id}
           role="listitem"
         >

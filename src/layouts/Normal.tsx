@@ -7,7 +7,7 @@ interface NormalLayoutProps {}
 const NormalLayout: FC<NormalLayoutProps> = ({ children }) => {
   return (
     <div>
-      <header className="mx-auto max-w-3xl py-8">
+      <header className="mx-auto max-w-3xl py-12">
         <Link href="/" passHref>
           <a className="block mx-auto rounded-full w-16 h-16 overflow-hidden">
             <Image

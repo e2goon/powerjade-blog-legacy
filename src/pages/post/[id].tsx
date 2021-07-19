@@ -3,7 +3,10 @@ import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import ReactMarkdown from "react-markdown";
 import { fetchPosts, fetchPost, usePost } from "@/hooks";
-import { Normal as NormalLayout } from "@/layouts";
+import { Normal as Layout } from "@/layouts";
+import { format } from "date-fns";
+import gfm from "remark-gfm";
+import emoji from "remark-emoji";
 
 interface PostProps {
   number: string;
@@ -15,15 +18,21 @@ const Post: NextPage<PostProps> = ({ number }) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <NormalLayout>
+    <Layout>
       <div className="max-w-3xl mx-auto px-4">
-        <h1>{post.title}</h1>
-        <time>{post.createdAt}</time>
-        <article className="prose">
-          <ReactMarkdown>{post.body}</ReactMarkdown>
+        <header className="text-center">
+          <h1 className="text-4xl font-bold">{post.title}</h1>
+          <time className="block mt-4" dateTime={post.createdAt}>
+            {format(new Date(post.createdAt), "MMMM dd, yyyy")}
+          </time>
+        </header>
+        <article className="mt-6 prose max-w-none">
+          <ReactMarkdown remarkPlugins={[gfm, emoji]}>
+            {post.body}
+          </ReactMarkdown>
         </article>
       </div>
-    </NormalLayout>
+    </Layout>
   );
 };
 
