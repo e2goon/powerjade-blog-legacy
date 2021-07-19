@@ -1,5 +1,5 @@
-query issues($labels: [String!] = ["post"]) {
-  repository(owner: "e2goon", name: "powerjade") {
+query issues($owner: String!, $name: String!, $labels: [String!] = ["post"]) {
+  repository(owner: $owner, name: $name) {
     issues(
       first: 10
       labels: $labels
@@ -16,8 +16,8 @@ query issues($labels: [String!] = ["post"]) {
   }
 }
 
-query issue($number: Int!) {
-  repository(owner: "e2goon", name: "powerjade") {
+query issue($number: Int!, $owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
     issue(number: $number) {
       title
       body

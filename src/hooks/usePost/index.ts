@@ -6,6 +6,8 @@ import { issue } from "@/generated/queries";
 const fetchPost = async (number: string) => {
   const data: IssueQuery = await graphqlClient.request(issue, {
     number: Number(number),
+    owner: process.env.NEXT_PUBLIC_GITHUB_OWNER,
+    name: process.env.NEXT_PUBLIC_GITHUB_NAME,
   });
   const post = data.repository.issue;
   return post;
