@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import Favicon from "@/components/Favicon";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,6 +16,7 @@ class MyDocument extends Document {
     return (
       <Html lang="ko">
         <Head>
+          <Favicon />
           <meta
             name="description"
             content="next.js, tailwindcss, graphql, react-query 스택으로 개발한 파워제이드 블로그"
