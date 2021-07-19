@@ -15,6 +15,10 @@ class MyDocument extends Document {
     return (
       <Html lang="ko">
         <Head>
+          <meta
+            name="description"
+            content="next.js, tailwindcss, graphql, react-query 스택으로 개발한 파워제이드 블로그"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
