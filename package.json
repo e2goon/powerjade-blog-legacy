@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/e2goon/powerjade#readme",
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.1",
     "graphql": "^15.5.1",
     "graphql-request": "^3.4.0",
     "next": "^11.0.1",

@@ -10,16 +10,16 @@ interface PostProps {
 }
 
 const Post: NextPage<PostProps> = ({ number }) => {
-  const { data: post, isLoading, error } = usePost(number);
+  const { data: post, isLoading } = usePost(number);
 
   if (isLoading) return <div>Loading...</div>;
 
   return (
     <NormalLayout>
-      <div className="mx-auto max-w-3xl">
+      <div className="max-w-3xl mx-auto px-4">
         <h1>{post.title}</h1>
         <time>{post.createdAt}</time>
-        <article>
+        <article className="prose">
           <ReactMarkdown>{post.body}</ReactMarkdown>
         </article>
       </div>
