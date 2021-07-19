@@ -17,6 +17,7 @@ class MyDocument extends Document {
       <Html lang="ko">
         <Head>
           <Favicon />
+          <link rel="manifest" href="/manifest.json" />
           <meta
             name="description"
             content="next.js, tailwindcss, graphql, react-query 스택으로 개발한 파워제이드 블로그"
