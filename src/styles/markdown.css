@@ -6,7 +6,7 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  @apply my-6 font-bold;
+  @apply mt-10 mb-6 font-bold;
 }
 
 .markdown h1 {
@@ -47,4 +47,9 @@
 .markdown th,
 .markdown td {
   @apply py-2 px-4;
+}
+
+/* pre */
+.markdown pre {
+  @apply !my-4 !rounded-xl;
 }

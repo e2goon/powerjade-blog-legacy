@@ -1,5 +1,9 @@
 module.exports = {
   images: {
-    domains: ["avatars.githubusercontent.com"],
+    domains: [
+      "octodex.github.com",
+      "user-images.githubusercontent.com",
+      "avatars.githubusercontent.com",
+    ],
   },
 };

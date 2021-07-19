@@ -1,4 +1,5 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
+import Image from "next/image";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import ReactMarkdown from "react-markdown";
@@ -15,15 +16,33 @@ interface PostProps {
 }
 
 const components = {
-  pre({ children }) {
-    const { type, props } = children[0];
-    if (type !== "code") return;
-    const { className, children: code } = props;
+  pre({ node }) {
+    const { children: pre } = node;
+    const { tagName, properties, children: code } = pre[0];
+    if (tagName !== "code") return;
+    const { className } = properties;
     const match = /language-(\w+)/.exec(className || "");
     return (
       <SyntaxHighlighter language={match && match[1]} style={atomDark}>
-        {String(code).replace(/\n$/, "")}
+        {String(code[0].value).replace(/\n$/, "")}
       </SyntaxHighlighter>
+    );
+  },
+  img({ node }) {
+    const { tagName, properties } = node;
+    if (tagName !== "img") return;
+    const { src, alt } = properties;
+    return (
+      <div className="my-4 rounded-xl overflow-hidden">
+        <Image
+          src={src}
+          alt={alt}
+          width={16}
+          height={9}
+          layout="responsive"
+          className="object-cover"
+        />
+      </div>
     );
   },
 };
@@ -42,7 +61,7 @@ const Post: NextPage<PostProps> = ({ number }) => {
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>
         </header>
-        <article className="mt-6 markdown">
+        <article className="mt-10 markdown">
           <ReactMarkdown components={components} remarkPlugins={[gfm, emoji]}>
             {post.body}
           </ReactMarkdown>
