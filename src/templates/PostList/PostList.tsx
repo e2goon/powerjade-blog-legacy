@@ -19,7 +19,7 @@ const PostList: FC<PostListProps> = () => {
           role="listitem"
         >
           <Link href={`/post/${post.number}`} passHref>
-            <a className="group">
+            <a className="block">
               <PostItem title={post.title} description={post.bodyText} />
             </a>
           </Link>

@@ -53,3 +53,12 @@
 .markdown pre {
   @apply !my-4 !rounded-xl;
 }
+
+/* blockquote */
+.markdown blockquote {
+  @apply relative pl-6 text-gray-800 italic;
+}
+.markdown blockquote::before {
+  content: '';
+  @apply absolute inset-0 right-auto bg-gray-200 w-2;
+}
