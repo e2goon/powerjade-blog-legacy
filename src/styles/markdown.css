@@ -49,6 +49,21 @@
   @apply py-2 px-4;
 }
 
+/* list */
+.markdown ol,
+.markdown ul {
+  @apply pl-8;
+}
+.markdown ol {
+  @apply list-decimal;
+}
+.markdown ul {
+  @apply list-disc;
+}
+.markdown li::marker {
+  @apply text-gray-500;
+}
+
 /* pre */
 .markdown pre {
   @apply !my-4 !rounded-xl;

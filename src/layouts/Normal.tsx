@@ -26,7 +26,7 @@ const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
         </Link>
       </header>
       <main>{children}</main>
-      <footer className="mx-auto max-w-3xl py-8 text-gray-600 text-center text-xs">
+      <footer className="mx-auto max-w-3xl py-10 text-gray-600 text-center text-xs">
         &copy;{" "}
         <a href="https://github.com/e2goon" className="text-blue-600 font-bold">
           powerjade

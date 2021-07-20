@@ -28,22 +28,25 @@ const components = {
       </SyntaxHighlighter>
     );
   },
-  img({ node }) {
-    const { tagName, properties } = node;
-    if (tagName !== "img") return;
-    const { src, alt } = properties;
-    return (
-      <div className="my-4 rounded-xl overflow-hidden">
-        <Image
-          src={src}
-          alt={alt}
-          width={16}
-          height={9}
-          layout="responsive"
-          className="object-cover"
-        />
-      </div>
-    );
+  p({ node, children }) {
+    const { children: p } = node;
+    const { type, tagName, properties } = p[0];
+    if (type === "element" && tagName === "img") {
+      const { src, alt } = properties;
+      return (
+        <div className="my-4 rounded-xl overflow-hidden">
+          <Image
+            src={src}
+            alt={alt}
+            width={16}
+            height={9}
+            layout="responsive"
+            className="object-cover"
+          />
+        </div>
+      );
+    }
+    return <p>{children}</p>;
   },
 };
 
@@ -55,13 +58,13 @@ const Post: NextPage<PostProps> = ({ number }) => {
   return (
     <Layout title={post.title}>
       <div className="max-w-3xl mx-auto px-4">
-        <header className="text-center">
+        <header className="my-10 pb-10 text-center border-b border-gray-200 first:mt-0">
           <h1 className="text-4xl font-bold">{post.title}</h1>
           <time className="block mt-4" dateTime={post.createdAt}>
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>
         </header>
-        <article className="mt-10 markdown">
+        <article className="my-10 min-h-[400px] markdown">
           <ReactMarkdown components={components} remarkPlugins={[gfm, emoji]}>
             {post.body}
           </ReactMarkdown>
