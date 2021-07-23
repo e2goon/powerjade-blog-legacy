@@ -22,6 +22,10 @@ class MyDocument extends Document {
             name="description"
             content="next.js, tailwindcss, graphql, react-query 스택으로 개발한 파워제이드 블로그"
           />
+          <meta
+            name="google-site-verification"
+            content="hjzBTvhwTf9H-quCXCQ5pX3chK6RtsCnn1FMDAskYEc"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
