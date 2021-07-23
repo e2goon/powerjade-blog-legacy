@@ -34,14 +34,14 @@ const components = {
     if (type === "element" && tagName === "img") {
       const { src, alt } = properties;
       return (
-        <div className="my-4 rounded-xl overflow-hidden">
+        <div className="my-4">
           <Image
             src={src}
             alt={alt}
             width={16}
             height={9}
             layout="responsive"
-            className="object-cover"
+            className="object-contain"
           />
         </div>
       );
