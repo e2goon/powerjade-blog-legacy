@@ -7,6 +7,8 @@ const fetchPosts = async () => {
   const data: IssuesQuery = await graphqlClient.request(issues, {
     owner: process.env.NEXT_PUBLIC_GITHUB_OWNER,
     name: process.env.NEXT_PUBLIC_GITHUB_NAME,
+    labels:
+      process.env.NODE_ENV === "production" ? ["post", "published"] : ["post"],
   });
   const posts = data.repository.issues.nodes;
   return posts;
