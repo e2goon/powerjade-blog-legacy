@@ -7,8 +7,6 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    if: github.event.label.name == 'post' && github.event.label.name == 'published'
-
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
