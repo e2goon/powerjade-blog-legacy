@@ -1,4 +1,4 @@
-query issues($owner: String!, $name: String!, $labels: [String!] = ["post"]) {
+query issues($owner: String!, $name: String!, $labels: [String!] = ["draft"]) {
   repository(owner: $owner, name: $name) {
     issues(
       first: 10
