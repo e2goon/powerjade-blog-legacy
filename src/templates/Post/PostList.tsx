@@ -20,7 +20,11 @@ const PostList: FC<PostListProps> = () => {
         >
           <Link href={`/post/${post.number}`} passHref>
             <a className="block">
-              <PostItem title={post.title} description={post.bodyText} />
+              <PostItem
+                title={post.title}
+                createdAt={post.createdAt}
+                description={post.bodyText}
+              />
             </a>
           </Link>
         </div>

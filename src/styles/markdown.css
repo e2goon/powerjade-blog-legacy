@@ -1,3 +1,6 @@
+.markdown {
+  @apply leading-relaxed;
+}
 
 /* heading */
 .markdown h1,

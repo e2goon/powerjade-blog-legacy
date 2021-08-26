@@ -57,19 +57,19 @@ const Post: NextPage<PostProps> = ({ number }) => {
 
   return (
     <Layout title={post.title}>
-      <div className="max-w-3xl mx-auto px-4">
+      <article className="max-w-3xl mx-auto px-4">
         <header className="my-10 pb-10 text-center border-b border-gray-200 first:mt-0">
-          <h1 className="text-4xl font-bold">{post.title}</h1>
+          <h1 className="text-5xl leading-tight font-bold">{post.title}</h1>
           <time className="block mt-4" dateTime={post.createdAt}>
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>
         </header>
-        <article className="my-10 min-h-[400px] markdown">
+        <div className="my-10 min-h-[400px] markdown">
           <ReactMarkdown components={components} remarkPlugins={[gfm, emoji]}>
             {post.body}
           </ReactMarkdown>
-        </article>
-      </div>
+        </div>
+      </article>
     </Layout>
   );
 };

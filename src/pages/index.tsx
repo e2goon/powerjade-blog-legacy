@@ -3,7 +3,7 @@ import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import { Normal as Layout } from "@/layouts";
 import { fetchPosts } from "@/hooks";
-import { PostList } from "@/templates/PostList";
+import { PostList } from "@/templates/Post";
 
 const HomePage: NextPage = () => {
   return (
