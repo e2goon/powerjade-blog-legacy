@@ -1,8 +1,9 @@
-query issues($owner: String!, $name: String!, $labels: [String!] = ["draft"]) {
+query issues($owner: String!, $name: String!, $label: [String!] = "post") {
   repository(owner: $owner, name: $name) {
     issues(
       first: 10
-      labels: $labels
+      labels: "post"
+      filterBy: { labels: $label }
       orderBy: { field: CREATED_AT, direction: DESC }
     ) {
       nodes {
