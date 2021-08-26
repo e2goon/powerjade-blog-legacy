@@ -62,7 +62,7 @@ const Post: NextPage<PostProps> = ({ number }) => {
           <h1 className="text-2xl font-bold md:text-5xl !leading-normal">
             {post.title}
           </h1>
-          <time className="block mt-4" dateTime={post.createdAt}>
+          <time className="block mt-2 text-gray-600" dateTime={post.createdAt}>
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>
         </header>

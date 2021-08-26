@@ -15,7 +15,7 @@ const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
       </Head>
       <header className="mx-auto max-w-3xl py-12">
         <Link href="/" passHref>
-          <a className="block mx-auto rounded-full w-16 h-16 overflow-hidden">
+          <a className="block mx-auto rounded-full w-16 h-16 overflow-hidden outline-none transition hover:ring-4 hover:ring-gray-300 focus:ring-4 focus:ring-gray-300">
             <Image
               src="https://avatars.githubusercontent.com/u/45934?s=200&v=4"
               alt="powerjade"

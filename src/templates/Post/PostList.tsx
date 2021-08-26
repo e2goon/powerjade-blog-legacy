@@ -15,7 +15,7 @@ const PostList: FC<PostListProps> = () => {
       {posts.map((post) => (
         <div className="font-body" key={post.id} role="listitem">
           <Link href={`/post/${post.number}`} passHref>
-            <a className="block">
+            <a className="block outline-none group">
               <PostItem
                 title={post.title}
                 createdAt={post.createdAt}

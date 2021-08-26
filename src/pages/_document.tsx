@@ -27,7 +27,7 @@ class MyDocument extends Document {
             content="hjzBTvhwTf9H-quCXCQ5pX3chK6RtsCnn1FMDAskYEc"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
           />
         </Head>
