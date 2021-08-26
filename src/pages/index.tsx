@@ -8,9 +8,7 @@ import { PostList } from "@/templates/Post";
 const HomePage: NextPage = () => {
   return (
     <Layout>
-      <div className="px-4">
-        <PostList />
-      </div>
+      <PostList />
     </Layout>
   );
 };

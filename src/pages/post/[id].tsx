@@ -59,7 +59,9 @@ const Post: NextPage<PostProps> = ({ number }) => {
     <Layout title={post.title}>
       <article className="max-w-3xl mx-auto px-4">
         <header className="my-10 pb-10 text-center border-b border-gray-200 first:mt-0">
-          <h1 className="text-5xl leading-tight font-bold">{post.title}</h1>
+          <h1 className="text-2xl font-bold md:text-5xl !leading-normal">
+            {post.title}
+          </h1>
           <time className="block mt-4" dateTime={post.createdAt}>
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>

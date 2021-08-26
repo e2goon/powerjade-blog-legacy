@@ -34,6 +34,13 @@ const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
         . Made with{" "}
         <a href="https://nextjs.org/" className="text-blue-600 font-bold">
           Next.js
+        </a>{" "}
+        &middot;{" "}
+        <a
+          href="https://github.com/e2goon/powerjade/issues"
+          className="text-blue-600 font-bold"
+        >
+          Github Issue
         </a>
       </footer>
     </>

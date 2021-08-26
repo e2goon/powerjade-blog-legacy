@@ -13,19 +13,22 @@
 }
 
 .markdown h1 {
-  @apply text-4xl;
+  @apply text-2xl md:text-3xl;
 }
 .markdown h2 {
-  @apply text-3xl;
+  @apply text-xl md:text-2xl;
 }
 .markdown h3 {
-  @apply text-2xl;
+  @apply text-lg md:text-xl;
 }
 .markdown h4 {
-  @apply text-xl;
+  @apply text-base md:text-lg;
 }
 .markdown h5 {
-  @apply text-lg;
+  @apply text-base;
+}
+.markdown h6 {
+  @apply text-base;
 }
 
 /* paragraph */
