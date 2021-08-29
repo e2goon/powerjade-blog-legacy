@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 .markdown {
   @apply leading-relaxed;
 }
@@ -72,7 +74,8 @@
 
 /* pre */
 .markdown pre {
-  @apply !my-4 !rounded-xl;
+  tab-size: 2 !important;
+  @apply !my-4 !rounded-xl scroll-none;
 }
 
 /* blockquote */
@@ -80,6 +83,16 @@
   @apply relative pl-6 text-gray-800 italic;
 }
 .markdown blockquote::before {
-  content: '';
+  content: "";
   @apply absolute inset-0 right-auto bg-gray-200 w-2;
+}
+
+@layer utilities {
+  .scroll-none {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+  }
+  .scroll-none::-webkit-scrollbar {
+    display: none;
+  }
 }
