@@ -34,7 +34,7 @@ const components = {
     if (type === "element" && tagName === "img") {
       const { src, alt } = properties;
       return (
-        <div className="my-4">
+        <a href={src} className="block my-4">
           <Image
             src={src}
             alt={alt}
@@ -43,7 +43,7 @@ const components = {
             layout="responsive"
             className="object-contain"
           />
-        </div>
+        </a>
       );
     }
     return <p>{children}</p>;
