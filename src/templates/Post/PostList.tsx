@@ -11,9 +11,9 @@ const PostList: FC<PostListProps> = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="mx-auto max-w-3xl" role="list">
+    <ul className="mx-auto max-w-3xl">
       {posts.map((post) => (
-        <div className="font-body" key={post.id} role="listitem">
+        <li key={post.id}>
           <Link href={`/post/${post.number}`} passHref>
             <a className="block outline-none group">
               <PostItem
@@ -23,9 +23,9 @@ const PostList: FC<PostListProps> = () => {
               />
             </a>
           </Link>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
