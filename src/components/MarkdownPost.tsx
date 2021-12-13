@@ -1,28 +1,16 @@
 import { FC } from "react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import gfm from "remark-gfm";
 import emoji from "remark-emoji";
+import highlight from "rehype-highlight";
+import "highlight.js/styles/an-old-hope.css";
 
 interface MarkdownPost {
   content: string;
 }
 
 const components = {
-  pre({ node }) {
-    const { children: pre } = node;
-    const { tagName, properties, children: code } = pre[0];
-    if (tagName !== "code") return;
-    const { className } = properties;
-    const match = /language-(\w+)/.exec(className || "");
-    return (
-      <SyntaxHighlighter language={match && match[1]} style={atomDark}>
-        {String(code[0].value).replace(/\n$/, "")}
-      </SyntaxHighlighter>
-    );
-  },
   p({ node, children }) {
     const { children: p } = node;
     const { type, tagName, properties } = p[0];
@@ -30,14 +18,9 @@ const components = {
       const { src, alt } = properties;
       return (
         <a href={src} className="block my-4">
-          <Image
-            src={src}
-            alt={alt}
-            width={16}
-            height={9}
-            layout="responsive"
-            className="object-contain"
-          />
+          <span className="relative block aspect-video">
+            <Image src={src} alt={alt} layout="fill" objectFit="contain" />
+          </span>
         </a>
       );
     }
@@ -46,7 +29,11 @@ const components = {
 };
 
 const MarkdownPost: FC<MarkdownPost> = ({ content }) => (
-  <ReactMarkdown components={components} remarkPlugins={[gfm, emoji]}>
+  <ReactMarkdown
+    components={components}
+    remarkPlugins={[gfm, emoji]}
+    rehypePlugins={[highlight]}
+  >
     {content}
   </ReactMarkdown>
 );

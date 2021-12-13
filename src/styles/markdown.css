@@ -1,7 +1,7 @@
 @tailwind utilities;
 
 .markdown {
-  @apply leading-relaxed;
+  @apply leading-loose;
 }
 
 /* heading */
@@ -45,7 +45,7 @@
 
 /* inline code */
 .markdown p code {
-  @apply px-2 py-1 bg-gray-200 text-gray-800 font-semibold rounded-md;
+  @apply px-2 py-1 bg-gray-200 text-gray-800 text-sm font-semibold rounded-[4px];
 }
 
 /* table */
@@ -73,9 +73,9 @@
 }
 
 /* pre */
-.markdown pre {
+.markdown .hljs {
   tab-size: 2 !important;
-  @apply !my-4 !rounded-xl scroll-none;
+  @apply !my-4 !rounded-xl font-mono text-sm font-semibold scroll-none;
 }
 
 /* blockquote */
