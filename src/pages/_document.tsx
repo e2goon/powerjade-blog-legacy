@@ -30,10 +30,6 @@ class MyDocument extends Document {
             name="naver-site-verification"
             content="3249c8a8aee385aa23d8a6b26b116d361316c00b"
           />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@600&display=swap"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <Main />
