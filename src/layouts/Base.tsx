@@ -14,7 +14,7 @@ const BaseLayout: FC<BaseLayoutProps> = ({ title, children }) => {
         <title>{title ? title + " · powerjade" : "powerjade"}</title>
       </Head>
 
-      <header className="sticky top-0 py-8 after:absolute after:inset-0 after:bg-white dark:after:bg-black after:gradient-mask-b-40">
+      <header className="py-8">
         <Link href="/" passHref>
           <a className="relative block mx-auto rounded-full w-16 h-16 overflow-hidden outline-none transition hover:ring-4 focus:ring-4 hover:ring-zinc-300 focus:ring-zinc-300 dark:hover:ring-zinc-700 dark:focus:ring-zinc-700 z-10">
             <Image
@@ -27,15 +27,21 @@ const BaseLayout: FC<BaseLayoutProps> = ({ title, children }) => {
         </Link>
       </header>
 
-      <main className="mx-auto max-w-2xl">{children}</main>
+      <main className="mx-auto max-w-2xl px-4">{children}</main>
 
-      <footer className="py-10 text-zinc-600 text-center text-xs">
+      <footer className="py-10 text-zinc-500 text-center text-xs">
         &copy;{" "}
-        <a href="https://github.com/e2goon" className="text-blue-600 font-bold">
+        <a
+          href="https://github.com/e2goon"
+          className="text-blue-600 font-bold dark:text-blue-500"
+        >
           powerjade
         </a>
         . Made with{" "}
-        <a href="https://nextjs.org/" className="text-blue-600 font-bold">
+        <a
+          href="https://nextjs.org/"
+          className="text-blue-600 font-bold dark:text-blue-500"
+        >
           Next.js
         </a>{" "}
         &middot;{" "}

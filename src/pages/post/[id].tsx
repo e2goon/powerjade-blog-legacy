@@ -17,16 +17,19 @@ const Post: NextPage<PostProps> = ({ number }) => {
 
   return (
     <Layout title={post.title}>
-      <article className="max-w-3xl mx-auto px-4">
-        <header className="my-10 pb-10 text-center border-b border-zinc-200 first:mt-0 dark:text-white">
-          <h1 className="text-2xl font-bold md:text-5xl !leading-normal">
+      <article className="max-w-3xl mx-auto">
+        <header className="my-10 pb-10 text-center border-b border-zinc-200 first:mt-0 dark:text-white dark:border-zinc-800">
+          <h1 className="text-4xl font-bold md:text-5xl !leading-normal">
             {post.title}
           </h1>
-          <time className="block mt-2 text-zinc-600" dateTime={post.createdAt}>
+          <time
+            className="block mt-2 text-zinc-600 dark:text-zinc-400"
+            dateTime={post.createdAt}
+          >
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>
         </header>
-        <div className="my-10 min-h-[400px] markdown">
+        <div className="mt-10 min-h-[400px] markdown">
           <MarkdownPost content={post.body} />
         </div>
       </article>

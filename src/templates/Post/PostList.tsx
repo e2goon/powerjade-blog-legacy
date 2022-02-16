@@ -15,7 +15,7 @@ const PostList: FC<PostListProps> = () => {
       {posts.map((post) => (
         <li
           key={post.id}
-          className="my-4 px-4 md:my-10 md:px-0 first:mt-0 last:mb-0"
+          className="my-4 md:my-10 md:px-0 first:mt-0 last:mb-0"
         >
           <Link href={`/post/${post.number}`} passHref>
             <a className="block outline-none group">
