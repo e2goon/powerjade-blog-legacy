@@ -2,9 +2,9 @@ import { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import { format } from "date-fns";
-import { fetchPosts, fetchPost, usePost } from "@/hooks";
-import { Normal as Layout } from "@/layouts";
-import MarkdownPost from "@/components/MarkdownPost";
+import { fetchPosts, fetchPost, usePost } from "~/hooks";
+import { Normal as Layout } from "~/layouts";
+import MarkdownPost from "~/components/MarkdownPost";
 
 interface PostProps {
   number: string;

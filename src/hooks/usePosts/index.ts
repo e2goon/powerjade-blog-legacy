@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
-import { graphqlClient } from "@/utils/client";
-import { IssuesQuery } from "@/generated/types";
-import { issues } from "@/generated/queries";
+import { graphqlClient } from "~/utils/client";
+import { IssuesQuery } from "~/generated/types";
+import { issues } from "~/generated/queries";
 
 const fetchPosts = async () => {
   const data: IssuesQuery = await graphqlClient.request(issues, {

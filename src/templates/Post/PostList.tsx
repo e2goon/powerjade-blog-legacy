@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import { usePosts } from "@/hooks";
+import { usePosts } from "~/hooks";
 import PostItem from "./PostItem";
 
 interface PostListProps {}
