@@ -3,7 +3,7 @@ import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import { format } from "date-fns";
 import { fetchPosts, fetchPost, usePost } from "~/hooks";
-import { Normal as Layout } from "~/layouts";
+import { Base as Layout } from "~/layouts";
 import MarkdownPost from "~/components/MarkdownPost";
 
 interface PostProps {
@@ -18,11 +18,11 @@ const Post: NextPage<PostProps> = ({ number }) => {
   return (
     <Layout title={post.title}>
       <article className="max-w-3xl mx-auto px-4">
-        <header className="my-10 pb-10 text-center border-b border-gray-200 first:mt-0">
+        <header className="my-10 pb-10 text-center border-b border-zinc-200 first:mt-0 dark:text-white">
           <h1 className="text-2xl font-bold md:text-5xl !leading-normal">
             {post.title}
           </h1>
-          <time className="block mt-2 text-gray-600" dateTime={post.createdAt}>
+          <time className="block mt-2 text-zinc-600" dateTime={post.createdAt}>
             {format(new Date(post.createdAt), "MMMM dd, yyyy")}
           </time>
         </header>

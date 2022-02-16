@@ -3,19 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 
-interface NormalLayoutProps {
+interface BaseLayoutProps {
   title?: string;
 }
 
-const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
+const BaseLayout: FC<BaseLayoutProps> = ({ title, children }) => {
   return (
     <>
       <Head>
         <title>{title ? title + " · powerjade" : "powerjade"}</title>
       </Head>
-      <header className="mx-auto max-w-3xl py-12">
+
+      <header className="sticky top-0 py-8 after:absolute after:inset-0 after:bg-white dark:after:bg-black after:gradient-mask-b-40">
         <Link href="/" passHref>
-          <a className="block mx-auto rounded-full w-16 h-16 overflow-hidden outline-none transition hover:ring-4 hover:ring-gray-300 focus:ring-4 focus:ring-gray-300">
+          <a className="relative block mx-auto rounded-full w-16 h-16 overflow-hidden outline-none transition hover:ring-4 focus:ring-4 hover:ring-zinc-300 focus:ring-zinc-300 dark:hover:ring-zinc-700 dark:focus:ring-zinc-700 z-10">
             <Image
               src="https://avatars.githubusercontent.com/u/45934?s=200&v=4"
               alt="powerjade"
@@ -25,8 +26,10 @@ const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
           </a>
         </Link>
       </header>
-      <main>{children}</main>
-      <footer className="mx-auto max-w-3xl py-10 text-gray-600 text-center text-xs">
+
+      <main className="mx-auto max-w-2xl">{children}</main>
+
+      <footer className="py-10 text-zinc-600 text-center text-xs">
         &copy;{" "}
         <a href="https://github.com/e2goon" className="text-blue-600 font-bold">
           powerjade
@@ -38,7 +41,7 @@ const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
         &middot;{" "}
         <a
           href="https://github.com/e2goon/powerjade/issues"
-          className="text-blue-600 font-bold"
+          className="text-blue-600 font-bold dark:text-blue-500"
         >
           Github Issue
         </a>
@@ -47,4 +50,4 @@ const NormalLayout: FC<NormalLayoutProps> = ({ title, children }) => {
   );
 };
 
-export default NormalLayout;
+export default BaseLayout;

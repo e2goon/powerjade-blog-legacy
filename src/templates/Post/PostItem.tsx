@@ -9,11 +9,11 @@ interface PostItemProps {
 
 const PostItem: FC<PostItemProps> = ({ title, createdAt, description }) => {
   return (
-    <div className="py-8 px-6 leading-relaxed transition group-hover:bg-gray-100 group-focus:bg-gray-100 md:rounded-lg">
+    <div className="p-6 leading-relaxed transition bg-zinc-50 rounded-2xl group-hover:bg-zinc-100 group-focus:bg-zinc-100 dark:bg-zinc-900 dark:group-hover:bg-zinc-800 dark:group-focus:bg-zinc-800">
       <strong className="block text-xl md:text-2xl">
         <span className="mr-2">{title}</span>
         <time
-          className="inline-block font-normal text-xs text-gray-600 md:text-sm"
+          className="inline-block font-normal text-xs text-zinc-600 md:text-sm dark:text-zinc-400"
           dateTime={createdAt}
         >
           {format(new Date(createdAt), "MMMM dd, yyyy")}

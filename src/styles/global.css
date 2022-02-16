@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply text-lg bg-white dark:bg-black dark:text-zinc-200;
+}

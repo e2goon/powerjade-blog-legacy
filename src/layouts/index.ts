@@ -1,3 +1,3 @@
-import Normal from "./Normal";
+import Base from "./Base";
 
-export { Normal };
+export { Base };

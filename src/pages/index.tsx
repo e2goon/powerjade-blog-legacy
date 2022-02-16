@@ -1,7 +1,7 @@
 import { NextPage, GetStaticProps } from "next";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
-import { Normal as Layout } from "~/layouts";
+import { Base as Layout } from "~/layouts";
 import { fetchPosts } from "~/hooks";
 import { PostList } from "~/templates/Post";
 
