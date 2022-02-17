@@ -77,7 +77,16 @@ const Favicon: FC = () => {
         name="msapplication-TileImage"
         content="/icons/ms-icon-144x144.png"
       />
-      <meta name="theme-color" content="#ffffff" />
+      <meta
+        name="theme-color"
+        content="#fff"
+        media="(prefers-color-scheme: light)"
+      />
+      <meta
+        name="theme-color"
+        content="#000"
+        media="(prefers-color-scheme: dark)"
+      />
     </>
   );
 };
