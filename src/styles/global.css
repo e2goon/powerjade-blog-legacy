@@ -7,3 +7,17 @@
 body {
   @apply text-lg bg-white dark:bg-black dark:text-zinc-200;
 }
+
+@layer components {
+  .next-image {
+    @apply block w-full;
+
+    > span {
+      @apply !static;
+    }
+
+    img {
+      @apply !relative !w-full !h-auto object-contain;
+    }
+  }
+}

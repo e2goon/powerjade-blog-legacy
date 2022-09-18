@@ -17,9 +17,12 @@ const components = {
     if (type === "element" && tagName === "img") {
       const { src, alt } = properties;
       return (
-        <a href={src} className="block my-4">
-          <span className="relative block aspect-video">
-            <Image src={src} alt={alt} layout="fill" objectFit="contain" />
+        <a
+          href={src}
+          className="block my-4 -mx-4 md:-mx-8 sm:rounded-lg sm:overflow-hidden hover:brightness-110"
+        >
+          <span className="next-image">
+            <Image src={src} alt={alt} layout="fill" />
           </span>
         </a>
       );
@@ -33,6 +36,7 @@ const MarkdownPost: FC<MarkdownPost> = ({ content }) => (
     components={components}
     remarkPlugins={[gfm, emoji]}
     rehypePlugins={[highlight]}
+    className="break-words"
   >
     {content}
   </ReactMarkdown>
