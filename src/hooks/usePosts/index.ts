@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { graphqlClient } from "~/utils/client";
 import { IssuesQuery } from "~/generated/types";
 import { issues } from "~/generated/queries";
@@ -14,7 +14,7 @@ const fetchPosts = async () => {
 };
 
 const usePosts = () => {
-  return useQuery("posts", () => fetchPosts(), { enabled: false });
+  return useQuery(["posts"], () => fetchPosts(), { enabled: false });
 };
 
 export { fetchPosts, usePosts };

@@ -1,6 +1,5 @@
 import { NextPage, GetStaticProps } from "next";
-import { QueryClient } from "react-query";
-import { dehydrate } from "react-query/hydration";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { Base as Layout } from "~/layouts";
 import { fetchPosts } from "~/hooks";
 import { PostList } from "~/templates/Post";
@@ -17,6 +16,6 @@ export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery("posts", fetchPosts);
+  await queryClient.prefetchQuery(["posts"], fetchPosts);
   return { props: { dehydratedState: dehydrate(queryClient) } };
 };

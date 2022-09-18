@@ -1,6 +1,5 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { QueryClient } from "react-query";
-import { dehydrate } from "react-query/hydration";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { format } from "date-fns";
 import { fetchPosts, fetchPost, usePost } from "~/hooks";
 import { Base as Layout } from "~/layouts";

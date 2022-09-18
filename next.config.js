@@ -1,18 +1,13 @@
-const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
-
 const prod = process.env.NODE_ENV === "production";
+const withPWA = require("next-pwa")({
+  disable: prod ? false : true,
+  dest: "public",
+});
 
-module.exports = withPWA({
-  swcMinify: true,
-  devIndicators: {
-    autoPrerender: false,
-  },
-  pwa: {
-    disable: prod ? false : true,
-    dest: "public",
-    runtimeCaching,
-  },
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   images: {
     domains: [
       "octodex.github.com",
@@ -20,4 +15,6 @@ module.exports = withPWA({
       "avatars.githubusercontent.com",
     ],
   },
-});
+};
+
+module.exports = withPWA(nextConfig);

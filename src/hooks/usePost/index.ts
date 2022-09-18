@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { graphqlClient } from "~/utils/client";
 import { IssueQuery } from "~/generated/types";
 import { issue } from "~/generated/queries";

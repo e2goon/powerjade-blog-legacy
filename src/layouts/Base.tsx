@@ -1,10 +1,11 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 
 interface BaseLayoutProps {
   title?: string;
+  children: ReactNode;
 }
 
 const BaseLayout: FC<BaseLayoutProps> = ({ title, children }) => {

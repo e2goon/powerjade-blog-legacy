@@ -1,12 +1,13 @@
+tsconfig.tsbuildinfo
 node_modules/
 .next/
 
 # generate files
 src/generated/
-public/sw.js
-public/workbox-*.js
+public/sw.js*
+public/workbox-*.js*
 public/robots.txt
-public/sitemap.xml
+public/sitemap*.xml
 
 # local env files
 .env
