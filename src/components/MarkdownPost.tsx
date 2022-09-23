@@ -3,8 +3,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import emoji from "remark-emoji";
-import highlight from "rehype-highlight";
-import "highlight.js/styles/an-old-hope.css";
+import prism from "rehype-prism-plus";
 
 interface MarkdownPost {
   content: string;
@@ -19,7 +18,9 @@ const components = {
       return (
         <a
           href={src}
-          className="block my-4 -mx-4 md:-mx-8 sm:rounded-lg sm:overflow-hidden hover:brightness-110"
+          className="max-h-96 block my-4 -mx-4 md:-mx-8 outline-none sm:rounded-lg sm:overflow-hidden hover:brightness-110"
+          target="_blank"
+          rel="noreferrer"
         >
           <span className="next-image">
             <Image src={src} alt={alt} layout="fill" />
@@ -35,7 +36,7 @@ const MarkdownPost: FC<MarkdownPost> = ({ content }) => (
   <ReactMarkdown
     components={components}
     remarkPlugins={[gfm, emoji]}
-    rehypePlugins={[highlight]}
+    rehypePlugins={[prism]}
     className="break-words"
   >
     {content}

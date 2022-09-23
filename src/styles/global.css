@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap");
 @import "/fonts/pretendard/pretendard-subset.css";
 
 @tailwind base;
@@ -19,5 +20,193 @@ body {
     img {
       @apply !relative !w-full !h-auto object-contain;
     }
+  }
+}
+
+@layer components {
+  .markdown {
+    @apply leading-loose;
+
+    /* heading */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply mt-10 mb-6 font-bold;
+    }
+
+    h1 {
+      @apply text-3xl md:text-4xl;
+    }
+    h2 {
+      @apply text-2xl md:text-3xl;
+    }
+    h3 {
+      @apply text-xl md:text-2xl;
+    }
+    h4 {
+      @apply text-lg md:text-xl;
+    }
+    h5 {
+      @apply text-base;
+    }
+    h6 {
+      @apply text-base;
+    }
+
+    /* paragraph */
+    p {
+      @apply my-4;
+    }
+
+    /* anchor */
+    a {
+      @apply text-blue-600 underline dark:text-blue-500;
+    }
+
+    /* inline code */
+    p code {
+      @apply px-2 py-1 bg-zinc-200 text-zinc-800 text-sm font-semibold rounded-md dark:bg-zinc-800 dark:text-zinc-200;
+    }
+
+    /* table */
+    tr {
+      @apply border-t border-b border-zinc-200;
+    }
+    th,
+    td {
+      @apply py-2 px-4;
+    }
+
+    /* list */
+    ol,
+    ul {
+      @apply pl-8;
+    }
+    ol {
+      @apply list-decimal;
+    }
+    ul {
+      @apply list-disc;
+    }
+    li::marker {
+      @apply text-zinc-500;
+    }
+
+    /* blockquote */
+    blockquote {
+      @apply relative pl-6 text-zinc-800 italic dark:text-zinc-400;
+
+      &::before {
+        content: "";
+        @apply absolute inset-0 right-auto bg-zinc-500 w-2;
+      }
+    }
+  }
+}
+
+/* prism */
+@layer components {
+  .token.tag,
+  .token.class-name,
+  .token.selector,
+  .token.selector .class,
+  .token.selector.class,
+  .token.function {
+    @apply text-pink-400;
+  }
+
+  .token.attr-name,
+  .token.keyword,
+  .token.rule,
+  .token.pseudo-class,
+  .token.important {
+    @apply text-slate-400;
+  }
+
+  .token.attr-value,
+  .token.class,
+  .token.string {
+    @apply text-sky-300;
+  }
+
+  .token.punctuation,
+  .token.attr-equals {
+    @apply text-slate-500;
+  }
+
+  .token.attr-value * {
+    @apply text-sky-300;
+  }
+
+  .token.attr-value .attr-equals,
+  .token.attr-value .attr-equals + .punctuation,
+  .token.attr-value > .punctuation:last-child {
+    @apply text-slate-500;
+  }
+
+  .token.property {
+    @apply text-sky-300;
+  }
+
+  .token.unit {
+    @apply text-teal-200;
+  }
+
+  .language-shell .token:not(.comment),
+  .token.atapply .token:not(.rule):not(.important):not(.punctuation) {
+    color: inherit;
+  }
+
+  .language-css .token.function {
+    @apply text-teal-200;
+  }
+
+  .token.comment,
+  .token.module,
+  .token.operator,
+  .token.combinator {
+    @apply text-slate-400;
+  }
+
+  .token.unchanged {
+    @apply block;
+  }
+
+  .token.deleted,
+  .token.inserted {
+    @apply block relative -mx-9 pl-8 pr-5 border-l-4 before:absolute before:top-0 before:left-4;
+  }
+
+  .token.inserted {
+    @apply bg-teal-400/[0.15] border-teal-400 before:content-['+'] before:text-teal-400;
+  }
+
+  .token.deleted {
+    @apply bg-rose-500/[0.15] border-rose-400 before:content-['-'] before:text-rose-400;
+  }
+
+  pre[class^="language-diff-"] {
+    @apply flex px-9;
+  }
+
+  pre[class^="language-diff-"] > code {
+    @apply flex-none min-w-full;
+  }
+
+  pre[class^="language-"] {
+    @apply -mx-4 my-6 p-4 rounded-none bg-zinc-900 bg-opacity-60 font-mono text-sm font-semibold scroll-none md:-mx-8 sm:!rounded-lg;
+  }
+}
+
+@layer utilities {
+  .scroll-none {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+  }
+  .scroll-none::-webkit-scrollbar {
+    display: none;
   }
 }
