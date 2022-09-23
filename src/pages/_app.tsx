@@ -8,7 +8,6 @@ import {
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "~/styles/global.css";
-import "~/styles/markdown.css";
 
 function MyApp({
   Component,
