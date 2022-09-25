@@ -109,16 +109,16 @@ body {
 
 /* prism */
 @layer components {
+  pre[class^="language-"] {
+    @apply -mx-4 my-6 p-4 rounded-none bg-zinc-900 font-mono text-white text-sm font-semibold overflow-auto scroll-none md:-mx-8 sm:!rounded-lg;
+  }
+
   pre[class^="language-diff-"] {
     @apply flex px-9;
   }
 
   pre[class^="language-diff-"] > code {
     @apply flex-none min-w-full;
-  }
-
-  pre[class^="language-"] {
-    @apply -mx-4 my-6 p-4 rounded-none bg-zinc-900 bg-opacity-60 font-mono text-sm font-semibold overflow-auto scroll-none md:-mx-8 sm:!rounded-lg;
   }
 
   .token.tag,
