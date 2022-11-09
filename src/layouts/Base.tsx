@@ -16,15 +16,16 @@ const BaseLayout: FC<BaseLayoutProps> = ({ title, children }) => {
       </Head>
 
       <header className="py-8">
-        <Link href="/" passHref>
-          <a className="relative block mx-auto rounded-full w-16 h-16 overflow-hidden outline-none transition hover:ring-4 focus:ring-4 hover:ring-zinc-300 focus:ring-zinc-300 dark:hover:ring-zinc-700 dark:focus:ring-zinc-700 z-10">
-            <Image
-              src="https://avatars.githubusercontent.com/u/45934?s=200&v=4"
-              alt="powerjade"
-              width={200}
-              height={200}
-            />
-          </a>
+        <Link
+          href="/"
+          className="relative block mx-auto rounded-full w-16 h-16 overflow-hidden outline-none transition hover:ring-4 focus:ring-4 hover:ring-zinc-300 focus:ring-zinc-300 dark:hover:ring-zinc-700 dark:focus:ring-zinc-700 z-10"
+        >
+          <Image
+            src="https://avatars.githubusercontent.com/u/45934?s=200&v=4"
+            alt="powerjade"
+            width={200}
+            height={200}
+          />
         </Link>
       </header>
 

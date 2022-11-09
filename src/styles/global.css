@@ -10,20 +10,6 @@ body {
 }
 
 @layer components {
-  .next-image {
-    @apply block w-full;
-
-    > span {
-      @apply !static;
-    }
-
-    img {
-      @apply !relative !w-full !h-auto object-contain;
-    }
-  }
-}
-
-@layer components {
   .markdown {
     @apply leading-loose;
 

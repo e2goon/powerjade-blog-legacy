@@ -22,9 +22,7 @@ const components = {
           target="_blank"
           rel="noreferrer"
         >
-          <span className="next-image">
-            <Image src={src} alt={alt} layout="fill" />
-          </span>
+          <Image width={720} height={720} src={src} alt={alt} />
         </a>
       );
     }

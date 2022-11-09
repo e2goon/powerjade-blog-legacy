@@ -17,14 +17,15 @@ const PostList: FC<PostListProps> = () => {
           key={post.id}
           className="my-4 md:my-10 md:px-0 first:mt-0 last:mb-0"
         >
-          <Link href={`/post/${post.number}`} passHref>
-            <a className="block outline-none group">
-              <PostItem
-                title={post.title}
-                createdAt={post.createdAt}
-                description={post.bodyText}
-              />
-            </a>
+          <Link
+            href={`/post/${post.number}`}
+            className="block outline-none group"
+          >
+            <PostItem
+              title={post.title}
+              createdAt={post.createdAt}
+              description={post.bodyText}
+            />
           </Link>
         </li>
       ))}
