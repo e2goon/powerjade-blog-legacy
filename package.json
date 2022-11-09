@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run watch:generate\" \"next dev\"",
-    "build": "next build",
+    "dev": "run-p dev:*",
+    "dev:generate": "graphql-codegen --config codegen.yml --require dotenv/config --watch",
+    "dev:next": "next dev",
+    "prebuild": "yarn build:generate",
+    "build": "yarn build:next",
+    "build:generate": "graphql-codegen --config codegen.yml --require dotenv/config",
+    "build:next": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint",
-    "generate": "graphql-codegen --config codegen.yml --require dotenv/config",
-    "watch:generate": "graphql-codegen --config codegen.yml --require dotenv/config --watch",
-    "prebuild": "npm run generate"
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -49,7 +51,6 @@
     "@types/react": "^18.0.25",
     "@types/react-syntax-highlighter": "^15.5.5",
     "autoprefixer": "^10.4.13",
-    "concurrently": "^7.5.0",
     "date-fns": "^2.29.3",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.2",
@@ -58,10 +59,14 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "next-sitemap": "^3.1.30",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.18",
     "prettier": "2.7.1",
     "tailwind-gradient-mask-image": "^1.0.0",
     "tailwindcss": "^3.2.2",
     "typescript": "^4.8.4"
+  },
+  "volta": {
+    "node": "16.18.1"
   }
 }
