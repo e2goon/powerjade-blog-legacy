@@ -16,14 +16,22 @@ const components = {
     if (type === "element" && tagName === "img") {
       const { src, alt } = properties;
       return (
-        <a
-          href={src}
-          className="max-h-96 block my-4 -mx-4 md:-mx-8 outline-none sm:rounded-lg sm:overflow-hidden hover:brightness-110"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image width={720} height={720} src={src} alt={alt} />
-        </a>
+        <div className="block text-center my-4 -mx-4 md:-mx-8">
+          <a
+            href={src}
+            className="inline-block outline-none sm:rounded-lg sm:overflow-hidden hover:brightness-110"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              className="mx-auto max-h-96 w-auto"
+              width={720}
+              height={720}
+              src={src}
+              alt={alt}
+            />
+          </a>
+        </div>
       );
     }
     return <p>{children}</p>;
