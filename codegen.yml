@@ -1,6 +1,7 @@
 schema:
   - ${NEXT_PUBLIC_GITHUB_ENDPOINT}:
       headers:
+        User-Agent: powerjade
         Authorization: bearer ${NEXT_PUBLIC_GITHUB_TOKEN}
 documents: "src/**/*.graphql"
 hooks:
