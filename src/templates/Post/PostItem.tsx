@@ -13,13 +13,13 @@ const PostItem: FC<PostItemProps> = ({ title, createdAt, description }) => {
       <strong className="block text-xl md:text-2xl">
         <span className="mr-2">{title}</span>
         <time
-          className="inline-block font-normal text-xs text-zinc-600 md:text-sm dark:text-zinc-400"
+          className="inline-block text-xs font-normal text-zinc-600 md:text-sm dark:text-zinc-400"
           dateTime={createdAt}
         >
           {format(new Date(createdAt), "MMMM dd, yyyy")}
         </time>
       </strong>
-      <p className="block mt-4 line-clamp-2">{description}</p>
+      <p className="mt-4 line-clamp-2">{description}</p>
     </div>
   );
 };
