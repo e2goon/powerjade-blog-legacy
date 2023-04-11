@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "powerjade.me",
+  description:
+    "This is a static website blog created via a github issue. I used the next.js 13 framework with it.",
   themeColor: [
     {
       media: "(prefers-color-scheme: light)",

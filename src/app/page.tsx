@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { github } from "~/utils/client";
 
