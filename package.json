@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "run-s dev:*",
+    "dev": "run-p dev:*",
     "dev:generate": "graphql-codegen --config codegen.ts --require dotenv/config --watch",
     "dev:next": "next dev",
     "prebuild": "yarn build:generate",

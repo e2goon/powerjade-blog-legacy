@@ -2,7 +2,12 @@ import Link from "next/link";
 import { github } from "~/utils/client";
 
 export default async function Home() {
-  const issues = await github.issues({ owner: "e2goon", name: "powerjade" });
+  const isDev = process.env.NODE_ENV === "development";
+  const issues = await github.issues({
+    owner: "e2goon",
+    name: "powerjade",
+    label: isDev ? ["draft", "published"] : ["published"],
+  });
   const posts = issues.repository?.issues.nodes;
 
   if (!posts) {
