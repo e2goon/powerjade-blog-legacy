@@ -4,10 +4,6 @@ node_modules/
 
 # generate files
 src/generated/
-public/sw.js*
-public/workbox-*.js*
-public/robots.txt
-public/sitemap*.xml
 
 # local env files
 .env
