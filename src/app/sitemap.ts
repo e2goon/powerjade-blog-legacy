@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { github } from "~/utils/client";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const isProd = process.env.VERCEL_ENV === "production";
   const repo = await github.issues({
     owner: "e2goon",
     name: "powerjade",
@@ -17,5 +18,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `https://powerjade.me/${route}`,
     lastModified: new Date().toISOString(),
   }));
-  return [...routes, ...issues];
+  return isProd ? [...routes, ...issues] : [];
 }
