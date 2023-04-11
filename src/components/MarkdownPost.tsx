@@ -4,10 +4,7 @@ import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import emoji from "remark-emoji";
 import prism from "rehype-prism-plus";
-
-interface MarkdownPost {
-  content: string;
-}
+import "prism-themes/themes/prism-vsc-dark-plus.css";
 
 const components = {
   p({ node, children }) {
@@ -16,16 +13,22 @@ const components = {
     if (type === "element" && tagName === "img") {
       const { src, alt } = properties;
       return (
-        <a
-          href={src}
-          className="max-h-96 block my-4 -mx-4 md:-mx-8 outline-none sm:rounded-lg sm:overflow-hidden hover:brightness-110"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className="next-image">
-            <Image src={src} alt={alt} layout="fill" />
-          </span>
-        </a>
+        <div className="block my-4 -mx-4 text-center md:-mx-8">
+          <a
+            href={src}
+            className="inline-block outline-none sm:rounded-lg sm:overflow-hidden hover:brightness-110"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              className="w-auto mx-auto max-h-96"
+              width={720}
+              height={720}
+              src={src}
+              alt={alt}
+            />
+          </a>
+        </div>
       );
     }
     return <p>{children}</p>;
@@ -37,10 +40,14 @@ const MarkdownPost: FC<MarkdownPost> = ({ content }) => (
     components={components}
     remarkPlugins={[gfm, emoji]}
     rehypePlugins={[prism]}
-    className="break-words"
+    className="markdown"
   >
     {content}
   </ReactMarkdown>
 );
 
 export default MarkdownPost;
+
+type MarkdownPost = {
+  content: string;
+};
