@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:generate": "graphql-codegen --config codegen.yml --require dotenv/config --watch",
+    "dev:generate": "graphql-codegen --config codegen.ts --require dotenv/config --watch",
     "dev:next": "next dev",
     "prebuild": "yarn build:generate",
-    "build": "yarn build:next",
-    "build:generate": "graphql-codegen --config codegen.yml --require dotenv/config",
+    "build": "run-p build:*",
+    "build:generate": "graphql-codegen --config codegen.ts --require dotenv/config",
     "build:next": "next build",
-    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -27,12 +26,13 @@
   },
   "homepage": "https://github.com/e2goon/powerjade#readme",
   "dependencies": {
-    "@tanstack/react-query": "^4.28.0",
+    "date-fns": "^2.29.3",
     "graphql": "^16.6.0",
     "graphql-request": "^5.2.0",
+    "graphql-tag": "^2.12.6",
     "highlight.js": "^11.7.0",
-    "next": "^13.2.4",
-    "next-pwa": "^5.6.0",
+    "next": "^13.3.0",
+    "prism-themes": "^1.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.6",
@@ -41,31 +41,30 @@
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.13.11",
-    "@graphql-codegen/typescript": "2.8.1",
-    "@graphql-codegen/typescript-document-nodes": "^2.3.13",
-    "@graphql-codegen/typescript-operations": "2.5.6",
+    "@graphql-codegen/cli": "3.2.2",
+    "@graphql-codegen/typescript": "3.0.2",
+    "@graphql-codegen/typescript-document-nodes": "^3.0.3",
+    "@graphql-codegen/typescript-graphql-request": "^4.5.9",
+    "@graphql-codegen/typescript-operations": "3.0.2",
     "@tailwindcss/typography": "^0.5.9",
-    "@tanstack/react-query-devtools": "^4.28.0",
-    "@types/react": "^18.0.31",
-    "@types/react-syntax-highlighter": "^15.5.6",
+    "@tanstack/react-query-devtools": "^4.29.1",
+    "@types/react": "^18.0.34",
     "autoprefixer": "^10.4.14",
-    "date-fns": "^2.29.3",
-    "eslint": "^8.37.0",
-    "eslint-config-next": "^13.2.4",
+    "encoding": "^0.1.13",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "^13.3.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "next-sitemap": "^3.1.55",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.21",
-    "prettier": "2.7.1",
+    "prettier": "2.8.7",
     "tailwind-gradient-mask-image": "^1.0.0",
     "tailwindcss": "^3.3.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.4"
   },
   "volta": {
-    "node": "16.18.1"
+    "node": "18.15.0"
   }
 }

@@ -1,8 +1,8 @@
 import { GraphQLClient } from "graphql-request";
+import { getSdk } from "~/generated/types";
 
-// TODO: 리팩토링하기
-const graphqlClient = new GraphQLClient(
-  process.env.NEXT_PUBLIC_GITHUB_ENDPOINT,
+const client = new GraphQLClient(
+  process.env.NEXT_PUBLIC_GITHUB_ENDPOINT as string,
   {
     headers: {
       authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
@@ -10,4 +10,6 @@ const graphqlClient = new GraphQLClient(
   }
 );
 
-export { graphqlClient };
+const github = getSdk(client);
+
+export { github };
