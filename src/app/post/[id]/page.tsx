@@ -10,9 +10,16 @@ export async function generateStaticParams() {
   }));
 }
 
-export const metadata: Metadata = {
-  title: "Post",
-};
+export async function generateMetadata({ params }) {
+  const post = await github.issue({
+    number: +params.id,
+    owner: "e2goon",
+    name: "powerjade",
+  });
+  if (!post.repository?.issue) return;
+  const { title } = post.repository?.issue;
+  return { title: `${title} - powerjade.me` };
+}
 
 export default async function Post({ params }) {
   const issue = await github.issue({
