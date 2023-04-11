@@ -47,7 +47,6 @@
     "@graphql-codegen/typescript-graphql-request": "^4.5.9",
     "@graphql-codegen/typescript-operations": "3.0.2",
     "@tailwindcss/typography": "^0.5.9",
-    "@tanstack/react-query-devtools": "^4.29.1",
     "@types/react": "^18.0.34",
     "autoprefixer": "^10.4.14",
     "encoding": "^0.1.13",
