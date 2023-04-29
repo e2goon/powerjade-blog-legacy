@@ -1,4 +1,5 @@
-import "./global.css";
+import "~/styles/global.css";
+
 import Link from "next/link";
 import { Metadata } from "next";
 

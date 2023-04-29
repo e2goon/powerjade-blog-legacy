@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
@@ -35,7 +34,7 @@ const components = {
   },
 };
 
-const MarkdownPost: FC<MarkdownPost> = ({ content }) => (
+const MarkdownPost = ({ content }: MarkdownPostProps) => (
   <ReactMarkdown
     components={components}
     remarkPlugins={[gfm, emoji]}
@@ -48,6 +47,6 @@ const MarkdownPost: FC<MarkdownPost> = ({ content }) => (
 
 export default MarkdownPost;
 
-type MarkdownPost = {
+type MarkdownPostProps = {
   content: string;
 };
