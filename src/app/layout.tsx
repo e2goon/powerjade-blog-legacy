@@ -2,6 +2,7 @@ import "~/styles/global.css";
 
 import Link from "next/link";
 import { Metadata } from "next";
+import { Cursors } from "./components/Cursors";
 
 export const metadata: Metadata = {
   title: "powerjade.me",
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body>
+        <Cursors />
         <div className="max-w-xl mx-auto">
           <header className="py-10 px-4 [&~main]:pt-0">
             <Link href="/" className="text-lg italic font-bold">
