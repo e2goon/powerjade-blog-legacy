@@ -2,12 +2,10 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   swcMinify: true,
   images: {
     domains: [
+      "github.com",
       "octodex.github.com",
       "user-images.githubusercontent.com",
       "avatars.githubusercontent.com",

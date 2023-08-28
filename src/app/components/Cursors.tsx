@@ -7,6 +7,7 @@ import {
   useUpdateMyPresence,
 } from "liveblocks.config";
 import { useEffect } from "react";
+
 import Cursor from "./Cursor";
 
 const COLORS = ["#DC2626", "#D97706", "#059669", "#7C3AED", "#DB2777"];

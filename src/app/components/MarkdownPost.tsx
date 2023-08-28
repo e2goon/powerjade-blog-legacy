@@ -1,9 +1,10 @@
+import "prism-themes/themes/prism-vsc-dark-plus.css";
+
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
-import emoji from "remark-emoji";
 import prism from "rehype-prism-plus";
-import "prism-themes/themes/prism-vsc-dark-plus.css";
+import emoji from "remark-emoji";
+import gfm from "remark-gfm";
 
 const components = {
   p({ node, children }) {

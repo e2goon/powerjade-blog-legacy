@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+
 import { github } from "~/utils/client";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

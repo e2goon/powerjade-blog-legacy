@@ -1,7 +1,8 @@
 import "~/styles/global.css";
 
-import Link from "next/link";
 import { Metadata } from "next";
+import Link from "next/link";
+
 import { Cursors } from "./components/Cursors";
 
 export const metadata: Metadata = {

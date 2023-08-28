@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { github } from "~/utils/client";
 
 const fetchPostList = async () => {

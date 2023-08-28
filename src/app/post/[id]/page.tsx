@@ -1,5 +1,5 @@
-import { Metadata } from "next";
 import { format } from "date-fns";
+
 import MarkdownPost from "~/app/components/MarkdownPost";
 import { github } from "~/utils/client";
 
