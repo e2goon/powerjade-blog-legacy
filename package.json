@@ -29,7 +29,7 @@
     "@liveblocks/client": "^1.2.3",
     "@liveblocks/react": "^1.2.3",
     "date-fns": "^2.30.0",
-    "graphql": "^16.8.0",
+    "graphql": "^16.8.1",
     "graphql-request": "~6.1.0",
     "graphql-tag": "^2.12.6",
     "next": "^13.4.19",
